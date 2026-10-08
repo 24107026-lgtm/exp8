@@ -1,17 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GitHub Actions Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10233f">
+    <meta name="description" content="A small demo site deployed and checked with GitHub Actions.">
+    <title>GitHub Actions Demo | Akshat Ukheda</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #172b4d;
+            background: #f3f6fb;
+            font-synthesis: none;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 32px 20px;
+            background:
+                radial-gradient(ellipse at 15% 10%, rgba(89, 143, 255, .16), transparent 35%),
+                radial-gradient(ellipse at 90% 90%, rgba(51, 190, 164, .12), transparent 34%),
+                #f3f6fb;
+        }
+
+        main { width: min(100%, 760px); }
+
+        .card {
+            padding: clamp(28px, 6vw, 56px);
+            border: 1px solid #e0e7f1;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, .94);
+            box-shadow: 0 24px 70px rgba(30, 55, 90, .12);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 18px;
+            color: #315eaa;
+            font-size: .78rem;
+            font-weight: 750;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .dot { width: 9px; height: 9px; border-radius: 50%; background: #2dbb8a; }
+        h1 { max-width: 600px; margin: 0; color: #10233f; font-size: clamp(2.2rem, 7vw, 3.7rem); line-height: 1.05; letter-spacing: -.045em; }
+        .intro { max-width: 580px; margin: 18px 0 32px; color: #5e6e85; font-size: 1.05rem; line-height: 1.7; }
+
+        .workflow-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+        .workflow {
+            min-height: 148px;
+            padding: 20px;
+            border: 1px solid #e4eaf3;
+            border-radius: 16px;
+            background: #fbfcfe;
+        }
+
+        .workflow-number { color: #4776be; font-size: .76rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+        h2 { margin: 10px 0 7px; color: #172b4d; font-size: 1.08rem; }
+        .workflow p { margin: 0; color: #65758b; font-size: .92rem; line-height: 1.55; }
+
+        footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; margin-top: 28px; padding-top: 20px; border-top: 1px solid #e8edf4; color: #65758b; font-size: .88rem; }
+        footer strong { color: #334a69; }
+
+        @media (max-width: 560px) {
+            .workflow-list { grid-template-columns: 1fr; }
+            .workflow { min-height: auto; }
+            footer { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
+    <main>
+        <section class="card" aria-labelledby="page-title">
+            <p class="eyebrow"><span class="dot" aria-hidden="true"></span> A GitHub Actions demo</p>
+            <h1 id="page-title">Hello from GitHub Actions!</h1>
+            <p class="intro">This website is published with GitHub Pages. Two small workflows help keep it available and ready to ship.</p>
 
-    <h1>Hello from GitHub Actions!</h1>
+            <section class="workflow-list" aria-label="Website workflows">
+                <article class="workflow">
+                    <span class="workflow-number">Workflow 01</span>
+                    <h2>Validate the website</h2>
+                    <p>Checks the page structure when changes are pushed or a pull request is opened.</p>
+                </article>
+                <article class="workflow">
+                    <span class="workflow-number">Workflow 02</span>
+                    <h2>Deploy to GitHub Pages</h2>
+                    <p>Publishes the website automatically when an update reaches the main branch.</p>
+                </article>
+            </section>
 
-    <p>This website is automatically deployed using GitHub Actions.</p>
-
-    <p>Student: Akshat Ukheda</p>
-
-    <p>GitHub: 24107026-lgtm</p>
-
+            <footer>
+                <span><strong>Student:</strong> Akshat Ukheda</span>
+                <span><strong>GitHub:</strong> 24107026-lgtm</span>
+            </footer>
+        </section>
+    </main>
 </body>
 </html>
